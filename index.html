@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Art of The Film</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.dropdown-content a');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', event => {
+                    event.preventDefault();
+                    const sectionId = link.getAttribute('href').substring(1);
+                    document.getElementById(sectionId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+        // Define the movie-to-platform URL mapping
+        const movieLinks = {
+            "Fast & Furious 9": "https://go.jc.fm/fRhd/axrg7dlr",
+            "The Pursuit of Happyness": "https://www.primevideo.com/region/eu/detail/0MW4Y2G0VYCAN9FD9NU3J3RA0U/ref=atv_dp_share_cu_r",
+            "Ted": "https://go.jc.fm/fRhd/kyrrdou2",
+            "Interstellar": "https://tv.apple.com/in/movie/interstellar-2014/umc.cmc.1vrwat5k1ucm5k42q97ioqyq3",
+            "Titanic": "https://www.disneyplus.com/movies/titanic/",
+            "Animal": "https://www.netflix.com/in/title/81436990?source=35",
+            "War": "https://tv.apple.com/in/movie/war/umc.cmc.2z2xnxo8fq0mwlrvfgt32sst6",
+            "Khuda Haafiz": "https://www.hotstar.com/in/movies/khuda-haafiz/1260036204?utm_source=gwa",
+            "Aashiqui 2": "https://www.primevideo.com/detail/0ND5MNRNZPTLZRI5FZT4HRCIDG/ref=atv_dp_share_cu_r",
+            "RRR": "https://www.netflix.com/in/title/81476453?source=35",
+            "Lucky Baskhar": "https://www.netflix.com/in/title/81902035?source=35",
+            "Arjun Reddy": "https://www.primevideo.com/detail/0P4SID0C6IGZBHZCYL69X98079/ref=atv_dp_share_cu_r",
+            "Mirzapur": "https://www.primevideo.com/detail/0PDOKMV9CRLOMO5EUKNCUJLG4Q/ref=atv_dp_share_cu_r",
+            "Criminal Justice - Adhura Sach": "https://www.hotstar.com/in/shows/criminal-justice-adhura-sach/1260108952",
+            "Farzi": "https://www.primevideo.com/detail/0HDHQAUF5LPWOJRCO025LFJSJI/ref=atv_dp_share_cu_r",
+            "Game of Thrones": "https://www.jiocinema.com/tv-shows/game-of-thrones/3739477",
+            "Squid Game": "https://www.netflix.com/in/title/81040344"
+
+        };
+
+        // Add event listeners to all movie-card images
+        document.addEventListener('DOMContentLoaded', () => {
+            const movieCards = document.querySelectorAll('.movie-card img');
+
+            movieCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    // Get the movie name from the sibling h3 element
+                    const movieName = card.nextElementSibling.textContent;
+
+                    // Redirect to the appropriate OTT platform URL
+                    if (movieLinks[movieName]) {
+                        window.open(movieLinks[movieName], '_blank');
+                    } else {
+                        alert(`OTT platform link for \"${movieName}\" is not available.`);
+                    }
+                });
+            });
+        });
+        
+    </script>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>The Art of the Film</h1>
+        </div>
+    </header>
+    <nav>
+        <div class="dropdown">
+            <a href="#">English</a>
+            <div class="dropdown-content">
+                <a href="#action">Action</a>
+                <a href="#comedy">Comedy</a>
+                <a href="#drama">Drama</a>
+                <a href="#sci-fi">Sci-Fi</a>
+                <a href="#romance">Romance</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Hindi</a>
+            <div class="dropdown-content">
+                <a href="#hindi-action">Action</a>
+                <a href="#hindi-drama">Drama</a>
+                <a href="#hindi-romance">Romance</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Telugu</a>
+            <div class="dropdown-content">
+                <a href="#telugu-action">Action</a>
+                <a href="#telugu-drama">Drama</a>
+                <a href="#telugu-romance">Romance</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Webseries</a>
+            <div class="dropdown-content">
+                <a href="#hindi-web">Hindi Web Series</a>
+                <a href="#english-web">English Web Series</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container" id="action">
+        <h2>English - Action</h2>
+        <div class="movie-card">
+            <img src="https://m.media-amazon.com/images/S/pv-target-images/fb649f35708e52bd55d6b6112766dce267ff274f5ed14ae6784a9ce05d60cf23.jpg"
+                alt="Fast & Furious 9">
+            <h3>Fast & Furious 9</h3>
+            <p>An action-packed movie full of high-speed chases and explosive stunts.</p>
+        </div>
+    </div>
+    <div class="container" id="drama">
+        <h2>English - Drama</h2>
+        <div class="movie-card">
+            <img src="https://miro.medium.com/v2/resize:fit:548/1*Y8vXN1mJeEHyXWJtFICjiQ.jpeg" alt="Drama Movie Poster">
+            <h3>The Pursuit of Happyness</h3>
+            <p>Chris Gardner takes up an unpaid internship in a brokerage firm after he loses his life's earnings
+                selling a product he invested in. His wife leaves him and he is left with the custody of his son.</p>
+        </div>
+    </div>
+    <div class="container" id="comedy">
+        <h2>English - Comedy</h2>
+        <div class="movie-card">
+            <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p9047781_p_v8_at.jpg"
+                alt="Comedy Movie Poster">
+            <h3>Ted</h3>
+            <p>A wish comes true for John when his teddy bear, Ted, comes to life. When he plans to move in with his
+                girlfriend, Ted, who is not prepared for the change, unintentionally ruins their relationship.</p>
+        </div>
+    </div>
+    <div class="container" id="sci-fi">
+        <h2>English - Sci-Fi</h2>
+        <div class="movie-card">
+            <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10543523_p_v8_as.jpg"
+                alt="Sci-Fi Movie Poster">
+            <h3>Interstellar</h3>
+            <p>When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to
+                pilot a spacecraft, along with a team of researchers, to find a new planet for humans.</p>
+        </div>
+    </div>
+    <div class="container" id="romance">
+        <h2>English - Romance</h2>
+        <div class="movie-card">
+            <img src="https://miro.medium.com/v2/resize:fit:1200/0*5MFFtR8MBLOv1q_Z.jpg">
+            <h3>Titanic</h3>
+            <p>Rose, who is being forced to marry a wealthy man, falls in love with Jack, a talented artist, aboard the
+                unsinkable Titanic. Unfortunately, the ship hits an iceberg, endangering their lives.</p>
+        </div>
+    </div>
+    <div class="container" id="hindi-action">
+        <h2>Hindi - Action</h2>
+        <div class="movie-card">
+            <img src="https://m.media-amazon.com/images/M/MV5BZThmNDg1NjUtNWJhMC00YjA3LWJiMjItNmM4ZDQ5ZGZiN2Y2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                alt="Hindi Action Movie Poster">
+            <h3>Animal</h3>
+            <p>The son of a wealthy, powerful industrialist returns to India and undergoes a remarkable transformation
+                as he becomes consumed by a quest for vengeance against those threatening his father's life..</p>
+        </div>
+    </div>
+    <div class="container" id="hindi-action">
+        <h2>Hindi - Action</h2>
+        <div class="movie-card">
+            <img src="https://m.media-amazon.com/images/M/MV5BZGI0ZGQ3MTQtYjllYy00MTkyLTg4ZWUtOTc1MmI2ZDE4OTYyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                alt="Hindi Action Movie Poster">
+            <h3>War</h3>
+            <p>A thrilling action-packed story of espionage and betrayal.</p>
+        </div>
+    </div>
+    <div class="container" id="hindi-drama">
+        <h2>Hindi - Drama</h2>
+        <div class="movie-card">
+            <img src="https://im.jdmagicbox.com/comp/jd_social/news/2020aug14/hg3og623jy-hsl9svblwp.jpg?clr=#422424"
+                alt="Hindi Drama Movie Poster">
+            <h3>Khuda Haafiz</h3>
+            <p>Sameer, a young man, leads a content life with Nargis, his wife. However, when she is kidnapped by human
+                traffickers, he must rescue her before it is too late.</p>
+        </div>
+    </div>
+    <div class="container" id="hindi-romance">
+        <h2>Hindi - Romance</h2>
+        <div class="movie-card">
+            <img src="https://stat5.bollywoodhungama.in/wp-content/uploads/2016/03/74637401.jpg"
+                alt="Hindi Romance Movie Poster">
+            <h3>Aashiqui 2</h3>
+            <p>Rahul, a singing sensation, falls in love with Aarohi, a woman who sings in a bar. He helps her
+                accomplish her dream of becoming a famous singer but his own shortcomings jeopardise their future.</p>
+        </div>
+    </div>
+
+    <div class="container" id="telugu-action">
+        <h2>Telugu - Action</h2>
+        <div class="movie-card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/d/d7/RRR_Poster.jpg" alt="Telugu Action Movie Poster">
+            <h3>RRR</h3>
+            <p>A fearless revolutionary and an officer in the British force, who once shared a deep bond, decide to join
+                forces and chart out an inspirational path of freedom against the despotic rulers.</p>
+        </div>
+    </div>
+    <div class="container" id="telugu-drama">
+        <h2>Telugu - Drama</h2>
+        <div class="movie-card">
+            <img src="https://m.media-amazon.com/images/M/MV5BMjEzN2ZjYjUtZTI3NC00MzMyLWJiNDAtMDBiZGEzNTBiY2RkXkEyXkFqcGc@._V1_.jpg"
+                alt="Telugu Action Movie Poster">
+            <h3>Lucky Baskhar</h3>
+            <p>A cash-strapped cashier working at a bank embarks on a risky investment scheme and soon gets drawn into
+                the murky world of money laundering.</p>
+        </div>
+    </div>
+    <div class="container" id="telugu-romance">
+        <h2>Telugu - Romance</h2>
+        <div class="movie-card">
+            <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p14472997_p_v8_aa.jpg"
+                alt="Telugu Action Movie Poster">
+            <h3>Arjun Reddy</h3>
+            <p>Arjun Reddy Deshmukh is a young surgeon with functioning alcoholism and a furious temper. He spirals into
+                self-destruction when he learns that his girlfriend is marrying another man.</p>
+        </div>
+    </div>
+    <div class="container" id="hindi-web">
+        <h2>Hindi Web Series</h2>
+        <div class="movie-card">
+            <img src="https://images.justwatch.com/poster/216332297/s718/season-2.jpg" alt="Not Available">
+            <h3>Mirzapur</h3>
+            <p>Akhandanand Tripathi made millions exporting carpets and became the mafia boss of Mirzapur. His son
+                Munna, an unworthy, power-hungry heir, stops at nothing to continue his father's legacy.</p>
+        </div>
+    </div>
+    <div class="container" id="hindi-web">
+        <h2>Hindi Web Series</h2>
+        <div class="movie-card">
+            <img src="https://m.media-amazon.com/images/M/MV5BNzQ1ZTcwODAtOTRkYy00NzRjLTgyYjEtYzg3NzQ1N2YyNmU1XkEyXkFqcGc@._V1_.jpg"
+                alt="Not Available">
+            <h3>Criminal Justice - Adhura Sach</h3>
+            <p>Criminal Justice: Adhura Sach is an Indian Hindi-language legal drama television series directed by Rohan
+                Sippy. Starring Pankaj Tripathi, Shweta Basu Prasad, Purab Kohli, Swastika Mukherjee and Adinath Kothare
+                in prominent roles, the storyline follows the murder case of a teenage celebrity.</p>
+        </div>
+    </div>
+    <div class="container" id="hindi-web">
+        <h2>Hindi Web Series</h2>
+        <div class="movie-card">
+            <img src="https://images.justwatch.com/poster/303328524/s718/season-1.jpg" alt="Not Available">
+            <h3>Farzi</h3>
+            <p>Sunny, a brilliant small-time artist is propelled into the high-stakes world of counterfeiting when he
+                creates the perfect fake currency note.</p>
+        </div>
+    </div>
+    <div class="container" id="english-web">
+        <h2>English Web Series</h2>
+        <div class="movie-card">
+            <img src="https://m.media-amazon.com/images/M/MV5BMTNhMDJmNmYtNDQ5OS00ODdlLWE0ZDAtZTgyYTIwNDY3OTU3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                alt="Not Available">
+            <h3>Game of Thrones</h3>
+            <p>Nine noble families wage war against each other in order to gain control over the mythical land of
+                Westeros. Meanwhile, a force is rising after millenniums and threatens the existence of living men.</p>
+        </div>
+    </div>
+    <div class="container" id="english-web">
+        <h2>English Web Series</h2>
+        <div class="movie-card">
+            <img src="https://m.media-amazon.com/images/I/71nlucFvruL.jpg" alt="Not Available">
+            <h3>Squid Game</h3>
+            <p>Hundreds of cash-strapped contestants accept an invitation to compete in children's games for a tempting
+                prize, but the stakes are deadly.</p>
+        </div>
+    </div>
+    <section class="review-section">
+        <h2>Reviews and Ratings</h2>
+
+        <form id="reviewForm">
+            <label for="reviewInput">Write a review:</label><br>
+            <textarea id="reviewInput" rows="4" cols="50" placeholder="Write your review here..."></textarea><br><br>
+
+            <label for="ratingInput">Rating:</label>
+            <select id="ratingInput">
+                <option value="">Select rating</option>
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+            </select><br><br>
+            <label for="moviename">Movie Name :</label>
+            <input type="text" placeholder="Enter movie you want to rate">
+            <button type="submit">Submit Review</button>
+        </form>
+
+        <div id="reviewsContainer" class="reviews">
+            <p>No reviews yet. Be the first to review!</p>
+        </div>
+    </section>
+</body>
+</html>

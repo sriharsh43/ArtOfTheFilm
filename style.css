@@ -1,0 +1,169 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("https://www.shutterstock.com/image-vector/cinema-hall-white-blank-screen-600nw-2469487381.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background: url("artoffilm.png");
+    background-position: center;
+    background-repeat: repeat;
+    background-color: beige;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    /* background-size: 400px; */
+
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav .dropdown {
+    position: relative;
+    margin: 0 1rem;
+    font-style: italic;
+}
+
+nav .dropdown a {
+    color: #F5F5F5;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+nav .dropdown a:hover {
+    color: #f39c12;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    min-width: 160px;
+    border-radius: 5px;
+    font-style: italic;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+}
+
+.dropdown-content a:hover {
+    background-color: #f39c12;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.movie-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 1rem;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    color: #333;
+
+}
+
+.movie-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.movie-card h3 {
+    margin: 0;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.movie-card p {
+    padding: 0 1rem 1rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+h1 {
+    text-align: left;
+    cursor: pointer;
+    color: black;
+    font-style: italic;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.review-section {
+    margin-top: 20px;
+}
+.review-section h2{
+   margin-left: 30px;
+   font-style: italic;
+   font-weight: bold;
+   color: darkkhaki;
+   text-decoration: underline;
+   cursor: pointer;
+   text-align: center;
+}
+
+.reviews {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+.rating {
+    color: gold;
+    font-size: 1.2em;
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dark-mode-toggle.dark {
+    background-color: #444;
+}
